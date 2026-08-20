@@ -22,7 +22,9 @@ export function PortfolioHero({ config }: PortfolioHeroProps) {
         <HeroTitle contentLayout={config.contentLayout} name={config.name} />
         {isExpro && config.roles ? (
           <div className={styles.exproDetails}>
-            <HeroRoles text={config.roles.text} texture={config.roles.texture} />
+            <div className={styles.exproRoles}>
+              <HeroRoles text={config.roles.text} texture={config.roles.texture} />
+            </div>
             <SocialLinks layout="row" links={config.socialLinks} />
           </div>
         ) : (

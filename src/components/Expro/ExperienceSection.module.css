@@ -138,3 +138,129 @@
   filter: drop-shadow(0 8em 10em rgb(61 39 78 / 18%));
   object-fit: contain;
 }
+
+/* Keep the content and sticker artwork proportional once the viewport is
+   narrower than the desktop composition. The section decoration uses viewport
+   sizing here (as the hero corner art does), while the content retains its own
+   smaller design-unit scale. */
+@media (max-width: 64rem) {
+  .section {
+    --foreground-pixel: clamp(0.58px, 0.0625vw, 0.7px);
+
+    min-height: clamp(860px, 90vw, 922px);
+  }
+
+  .curves {
+    font-size: initial;
+    width: min(384px, 20vw);
+  }
+}
+
+/* Tablet keeps the desktop sticker composition, but progressively moves it
+   beyond the right edge as the list and sticker column begin to compete. */
+@media (min-width: 37.501rem) and (max-width: 64rem) {
+  .stickers {
+    --tablet-sticker-escape: clamp(0px, calc(1024px - 100vw), 380px);
+  }
+
+  .figmaSticker {
+    translate: var(--tablet-sticker-escape) 0;
+  }
+
+  .kdiSticker {
+    transform: translateX(var(--tablet-sticker-escape)) rotate(8deg);
+  }
+
+  .khSticker {
+    transform: translateX(var(--tablet-sticker-escape)) rotate(-5.14deg);
+  }
+
+  .mgSticker {
+    transform: translateX(var(--tablet-sticker-escape)) rotate(-14.71deg);
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .section {
+    --foreground-pixel: 0.5px;
+    --item-list-gap: 70em;
+
+    min-height: 970px;
+  }
+
+  .content {
+    gap: 45em;
+    min-height: 970px;
+  }
+
+  .headingGroup {
+    width: min(648em, calc(100vw - 200em));
+  }
+
+  .entries {
+    max-width: 760em;
+  }
+
+  /* On phones, the stickers become a separate cluster below the list. The
+     Figma mark deliberately remains unrotated. */
+  .stickers {
+    font-size: 0.4px;
+  }
+
+  .figmaSticker {
+    left: 200em;
+    right: auto;
+    top: 1400em;
+  }
+
+  .kdiSticker {
+    right: 70em;
+    top: 1350em;
+  }
+
+  .khSticker {
+    right: 30em;
+    top: 1820em;
+  }
+
+  .mgSticker {
+    left: 90em;
+    right: auto;
+    top: 1900em;
+  }
+}
+
+@media (max-width: 30rem) {
+  .section,
+  .content {
+    min-height: 1400px;
+  }
+
+  .figmaSticker,
+  .kdiSticker,
+  .khSticker,
+  .mgSticker {
+    left: 50%;
+    right: auto;
+  }
+
+  .figmaSticker {
+    top: 1360em;
+    translate: -50% 0;
+  }
+
+  .kdiSticker {
+    top: 1800em;
+    transform: translateX(-50%) rotate(8deg);
+  }
+
+  .khSticker {
+    top: 2380em;
+    transform: translateX(-50%) rotate(-5.14deg);
+  }
+
+  .mgSticker {
+    top: 3000em;
+    transform: translateX(-50%) rotate(-14.71deg);
+  }
+}

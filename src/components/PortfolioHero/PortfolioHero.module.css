@@ -45,4 +45,12 @@
 
     padding-inline: 24px;
   }
+
+  .exproDetails {
+    gap: 0;
+  }
+
+  .exproRoles {
+    display: none;
+  }
 }

@@ -161,6 +161,13 @@
     font-size: 40px;
     top: 12.5px;
   }
+
+  .exproTitle .foreground {
+    left: 50%;
+    top: 37px;
+    transform: translateX(-50%);
+    width: max-content;
+  }
 }
 
 @media (max-width: 23rem) {
