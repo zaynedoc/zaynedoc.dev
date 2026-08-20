@@ -1,0 +1,33 @@
+.decorations {
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  z-index: var(--layer-decoration);
+}
+
+.squares,
+.curves {
+  position: absolute;
+}
+
+.squares {
+  aspect-ratio: 2300 / 772;
+  bottom: 0;
+  left: 0;
+  width: min(575px, 29.9479vw);
+}
+
+.curves {
+  aspect-ratio: 1152 / 768;
+  bottom: 0;
+  right: 0;
+  width: min(288px, 15vw);
+}
+
+.squares img,
+.curves img {
+  height: 100%;
+  object-fit: fill;
+  width: 100%;
+}

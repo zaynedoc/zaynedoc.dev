@@ -1,0 +1,24 @@
+.hero {
+  min-height: calc(100svh - 80px);
+  overflow: clip;
+  position: relative;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  inset: 0;
+  justify-content: space-between;
+  padding-inline: 100px;
+  position: absolute;
+  z-index: var(--layer-content);
+}
+
+@media (max-width: 64rem) {
+  .content {
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    padding-inline: 24px;
+  }
+}

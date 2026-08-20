@@ -1,13 +1,10 @@
-import { HeroBackground } from "@/components/PortfolioHero/HeroBackground";
-
-import styles from "./page.module.css";
+import { PortfolioHero } from "@/components/PortfolioHero/PortfolioHero";
+import { homeHeroConfig } from "@/data/hero";
 
 export default function HomePage() {
   return (
     <main>
-      <section className={styles.hero} aria-label="Home hero">
-        <HeroBackground />
-      </section>
+      <PortfolioHero config={homeHeroConfig} />
     </main>
   );
 }

@@ -1,5 +1,0 @@
-.hero {
-  min-height: calc(100svh - 80px);
-  overflow: clip;
-  position: relative;
-}
