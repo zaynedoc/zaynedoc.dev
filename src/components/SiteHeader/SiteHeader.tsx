@@ -8,7 +8,7 @@ import tabletBackdrop from "@/assets/navigation/navigation-tablet.png";
 import styles from "./SiteHeader.module.css";
 
 const navigationLinks = [
-  { href: "/", label: "/home", disabled: false },
+  { href: "/", label: "/root", disabled: false },
   { href: "/expro", label: "/expro", disabled: false },
   { href: "/about", label: "/about", disabled: true },
 ] as const;
