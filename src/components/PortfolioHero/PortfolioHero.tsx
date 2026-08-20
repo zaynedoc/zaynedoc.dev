@@ -17,7 +17,7 @@ export function PortfolioHero({ config }: PortfolioHeroProps) {
   return (
     <section className={styles.hero} aria-label="Portfolio hero">
       <HeroBackground />
-      <HeroDecorations />
+      <HeroDecorations isExpro={isExpro} />
       <div className={`${styles.content} ${isExpro ? styles.exproContent : styles.homeContent}`}>
         <HeroTitle contentLayout={config.contentLayout} name={config.name} />
         {isExpro && config.roles ? (

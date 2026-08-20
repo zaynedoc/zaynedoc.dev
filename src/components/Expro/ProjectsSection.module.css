@@ -4,23 +4,25 @@
   --item-list-gap: 130em;
 
   isolation: isolate;
-  min-height: clamp(1080px, 56.25vw, 1440px);
+  min-height: clamp(900px, 46.875vw, 1200px);
   overflow: clip;
   position: relative;
 }
 
 .content {
+  align-items: flex-end;
   display: flex;
   flex-direction: column;
   font-size: var(--foreground-pixel);
   gap: 75em;
-  min-height: 1440em;
+  min-height: 1200em;
   padding: 100em;
   position: relative;
   z-index: var(--layer-content);
 }
 
 .headingGroup {
+  align-items: flex-end;
   display: flex;
   flex-direction: column;
   height: 136em;
@@ -29,7 +31,7 @@
 }
 
 .heading {
-  background: linear-gradient(104deg, #d262f8 1.45%, rgb(213 145 242 / 95%) 50.98%, rgb(226 183 255 / 90%) 100.5%);
+  background: linear-gradient(101deg, rgb(226 183 255 / 90%) 1.45%, rgb(213 145 242 / 95%) 50.98%, #d262f8 100.5%);
   background-clip: text;
   color: transparent;
   font-family: var(--font-display);
@@ -40,35 +42,37 @@
 }
 
 .headingRule {
-  background: linear-gradient(129deg, #d262f8 1.45%, rgb(213 145 242 / 95%) 50.98%, rgb(226 183 255 / 90%) 100.5%);
+  background: linear-gradient(129deg, rgb(226 183 255 / 90%) 1.45%, rgb(213 145 242 / 95%) 50.98%, #d262f8 100.5%);
   height: 32em;
   width: 100%;
 }
 
 .entries {
+  align-items: flex-end;
   display: flex;
   flex: 1;
   flex-direction: column;
   gap: var(--item-list-gap);
   justify-content: flex-start;
-  margin-left: 50em;
-  max-width: 760em;
+  margin-right: 50em;
+  max-width: 800em;
   min-height: 0;
+  width: 100%;
 }
 
 .stripes,
 .curves,
-.stickers {
+.squares {
   pointer-events: none;
   position: absolute;
   z-index: var(--layer-decoration);
 }
 
 .stripes {
-  aspect-ratio: 4012 / 3332;
-  opacity: 0.78;
-  right: max(-172px, -9vw);
-  top: 10vh;
+  aspect-ratio: 4428 / 3548;
+  opacity: 0.82;
+  right: max(100px, 20vw);
+  top: 100px;
   width: min(62vw, 1200px);
 }
 
@@ -77,64 +81,22 @@
 }
 
 .curves {
-  aspect-ratio: 1536 / 1160;
+  aspect-ratio: 1152 / 1536;
   font-size: var(--edge-decoration-pixel);
-  right: 0;
+  left: 0;
   top: 0;
   width: 384em;
 }
 
-.curves img {
-  object-fit: contain;
+.squares {
+  aspect-ratio: 1536 / 2304;
+  bottom: 0;
+  font-size: var(--edge-decoration-pixel);
+  left: 0;
+  width: 384em;
 }
 
-.stickers {
-  font-size: var(--foreground-pixel);
-  inset: 0;
-}
-
-.figmaSticker,
-.kdiSticker,
-.khSticker,
-.mgSticker {
-  position: absolute;
-}
-
-.figmaSticker {
-  height: 346em;
-  right: 372em;
-  top: 200em;
-  width: 346em;
-}
-
-.kdiSticker {
-  height: 414em;
-  right: 71em;
-  top: 390em;
-  transform: rotate(8.0deg);
-  width: 414em;
-}
-
-.khSticker {
-  height: 270em;
-  right: 63em;
-  top: 725em;
-  transform: rotate(-5.14deg);
-  width: 809em;
-}
-
-.mgSticker {
-  height: 293em;
-  right: 235em;
-  top: 1010em;
-  transform: rotate(-14.71deg);
-  width: 293em;
-}
-
-.figmaSticker img,
-.kdiSticker img,
-.khSticker img,
-.mgSticker img {
-  filter: drop-shadow(0 8em 10em rgb(61 39 78 / 18%));
+.curves img,
+.squares img {
   object-fit: contain;
 }

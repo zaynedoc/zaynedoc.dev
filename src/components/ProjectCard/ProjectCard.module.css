@@ -1,17 +1,19 @@
 .card {
+  align-items: flex-end;
   color: #16131a;
   display: flex;
   flex-direction: column;
   gap: 16em;
+  text-align: right;
   text-shadow: 0 4em 2.5em rgb(0 0 0 / 25%);
 }
 
-.role,
-.organization {
+.title,
+.descriptor {
   margin: 0;
 }
 
-.role {
+.title {
   background: linear-gradient(180deg, #000 0%, rgb(40 40 40 / 90%) 100%);
   background-clip: text;
   color: transparent;
@@ -21,8 +23,7 @@
   line-height: var(--line-height-display);
 }
 
-.organization {
-  align-self: flex-start;
+.descriptor {
   background: linear-gradient(180deg, #000 0%, rgb(40 40 40 / 90%) 100%);
   background-clip: text;
   color: transparent;
@@ -33,8 +34,18 @@
   text-decoration: none;
 }
 
-.organization:hover {
+.descriptor:hover {
   text-decoration: underline;
   text-decoration-color: currentcolor;
   text-underline-offset: 0.18em;
+}
+
+.visuallyHidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

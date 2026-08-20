@@ -6,9 +6,23 @@
   z-index: var(--layer-decoration);
 }
 
+.exproDecorations {
+  --edge-decoration-pixel: clamp(0.75px, 0.0390625vw, 1px);
+
+  font-size: var(--edge-decoration-pixel);
+}
+
 .squares,
 .curves {
   position: absolute;
+}
+
+.exproDecorations .squares {
+  width: 575em;
+}
+
+.exproDecorations .curves {
+  width: 288em;
 }
 
 .squares {
@@ -30,4 +44,14 @@
   height: 100%;
   object-fit: fill;
   width: 100%;
+}
+
+@media (max-width: 64rem) {
+  .exproDecorations .squares {
+    width: min(575px, 29.9479vw);
+  }
+
+  .exproDecorations .curves {
+    width: min(288px, 15vw);
+  }
 }
