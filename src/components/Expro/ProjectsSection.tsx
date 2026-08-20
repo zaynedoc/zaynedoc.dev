@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 import { DecorativeLayer } from "@/components/DecorativeLayer/DecorativeLayer";
 import { ProjectCard } from "@/components/ProjectCard/ProjectCard";
@@ -8,6 +11,8 @@ import { projectItems } from "@/data/projects";
 import styles from "./ProjectsSection.module.css";
 
 export function ProjectsSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <section className={styles.section} aria-labelledby="projects-heading" data-theme-color="#fcf9ff">
       <SectionBackground variant="projects" />
@@ -31,7 +36,15 @@ export function ProjectsSection() {
         </div>
 
         <div className={styles.entries}>
-          {projectItems.map((item) => <ProjectCard item={item} key={item.title} />)}
+          {projectItems.map((item, index) => (
+            <ProjectCard
+              expanded={openIndex === index}
+              item={item}
+              key={item.title}
+              onToggle={() => setOpenIndex((currentIndex) => currentIndex === index ? null : index)}
+              panelId={`project-details-${index}`}
+            />
+          ))}
         </div>
       </div>
     </section>

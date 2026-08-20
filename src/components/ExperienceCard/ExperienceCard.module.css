@@ -4,6 +4,18 @@
   flex-direction: column;
   gap: 16em;
   text-shadow: 0 4em 2.5em rgb(0 0 0 / 25%);
+  width: 100%;
+}
+
+.trigger {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  width: max-content;
 }
 
 .role,
@@ -19,6 +31,18 @@
   font-size: 40em;
   font-weight: 400;
   line-height: var(--line-height-display);
+  transition: background 180ms ease, filter 180ms ease;
+}
+
+.trigger:is(:hover, :focus-visible) .role,
+.expanded .role {
+  background-image: linear-gradient(180deg, #673278 0%, #a658c1 100%);
+  filter: drop-shadow(0 0 5em rgb(173 105 207 / 42%));
+}
+
+.trigger:focus-visible {
+  outline: 2em solid #9470d9;
+  outline-offset: 8em;
 }
 
 .organization {
