@@ -33,9 +33,9 @@ export const homeHeroConfig: HeroConfig = {
       text: "in/zaynedoc",
     },
     {
-      href: "https://zaynedoc.dev",
-      label: "zaynedoc.dev",
-      text: "zaynedoc.dev",
+      href: "https://www.figma.com/@zaynedoc",
+      label: "Zayne Dockery on Figma",
+      text: "@zaynedoc",
     },
   ],
 };

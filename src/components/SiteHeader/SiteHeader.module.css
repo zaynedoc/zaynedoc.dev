@@ -69,7 +69,8 @@
   white-space: nowrap;
 }
 
-.menu a {
+.menu a,
+.disabledLink {
   color: var(--color-ink);
   display: block;
   text-decoration: none;
@@ -85,10 +86,9 @@
   border-radius: 2px;
 }
 
-.menu a[aria-disabled="true"] {
+.disabledLink {
   cursor: not-allowed;
-  opacity: 0.55;
-  pointer-events: none;
+  color: #89858e;
 }
 
 @media (max-width: 64rem) {

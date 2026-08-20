@@ -1,7 +1,7 @@
 .background {
   --experience-background-height: 5840px;
   --experience-background-width: 7680px;
-  --section-background-blur: 3px;
+  --section-background-wash: rgb(252 249 255 / 50%);
 
   inset: 0;
   overflow: hidden;
@@ -15,7 +15,6 @@
 }
 
 .artwork {
-  filter: blur(var(--section-background-blur));
   height: var(--experience-background-height);
   left: 50%;
   max-width: none;
@@ -23,4 +22,14 @@
   top: 50%;
   transform: translate(-50%, -50%) scale(1.001);
   width: var(--experience-background-width);
+  z-index: 0;
+}
+
+.background::after {
+  background: var(--section-background-wash);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
 }

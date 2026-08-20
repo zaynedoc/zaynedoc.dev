@@ -25,7 +25,14 @@
   gap: 15px;
   line-height: var(--line-height-display);
   text-decoration: none;
+  transition: background 180ms ease, filter 180ms ease;
   white-space: nowrap;
+}
+
+.desktopList a:is(:hover, :focus-visible) {
+  background-image: linear-gradient(to bottom, #fff 0%, #f3c5ff 52%, #d998f4 100%);
+  filter: drop-shadow(0 4px 4px rgb(0 0 0 / 25%)) drop-shadow(0 0 11px rgb(255 234 255 / 72%));
+  outline: none;
 }
 
 .desktopIcon {
@@ -67,20 +74,25 @@
     width: 196px;
   }
 
-  .compactArtwork {
-    height: 68px;
-    left: -10px;
-    max-width: none;
-    pointer-events: none;
-    position: absolute;
-    top: -6px;
-    width: 216px;
-  }
-
   .compactLink {
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 transparent;
     height: 48px;
     position: absolute;
     top: 0;
+    transition: box-shadow 180ms ease, background-color 180ms ease;
     width: 48px;
+  }
+
+  .compactIcon {
+    filter: drop-shadow(0 4px 4px rgb(0 0 0 / 25%));
+    height: 48px;
+    width: 48px;
+  }
+
+  .compactLink:is(:hover, :focus-visible) {
+    background-color: rgb(255 239 255 / 16%);
+    box-shadow: 0 0 14px 5px rgb(255 234 255 / 62%);
+    outline: 1px solid rgb(255 255 255 / 72%);
   }
 }

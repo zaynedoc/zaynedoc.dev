@@ -1,6 +1,8 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
 
 :root {
+  --browser-theme-color: #cba5e5;
   --color-page: #e4d7ff;
   --color-surface: #f7f2ff;
   --color-lavender-strong: #c9aeff;
@@ -59,7 +61,7 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  background: var(--background);
+  background: var(--browser-theme-color);
   color: var(--foreground);
   font-family: var(--font-body);
   font-synthesis: none;
@@ -80,4 +82,17 @@ select {
 :focus-visible {
   outline: 3px solid var(--color-focus);
   outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body,
+  body * {
+    cursor: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

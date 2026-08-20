@@ -1,14 +1,13 @@
 import Image, { type StaticImageData } from "next/image";
 
+import figmaIcon from "@/assets/hero/social-figma.svg";
 import githubIcon from "@/assets/hero/social-github.svg";
 import linkedInIcon from "@/assets/hero/social-linkedin.svg";
-import compactSocialIcons from "@/assets/hero/social-list-compact.svg";
-import websiteIcon from "@/assets/hero/social-website.svg";
 import type { SocialLink } from "@/data/hero";
 
 import styles from "./SocialLinks.module.css";
 
-const socialIcons: readonly StaticImageData[] = [githubIcon, linkedInIcon, websiteIcon];
+const socialIcons: readonly StaticImageData[] = [githubIcon, linkedInIcon, figmaIcon];
 
 type SocialLinksProps = {
   layout?: "column" | "row";
@@ -30,7 +29,6 @@ export function SocialLinks({ layout = "column", links }: SocialLinksProps) {
       </ul>
 
       <ul className={styles.compactList} aria-label="Social links">
-        <Image alt="" aria-hidden="true" className={styles.compactArtwork} src={compactSocialIcons} />
         {links.map((link, index) => (
           <li key={link.href}>
             <a
@@ -40,6 +38,7 @@ export function SocialLinks({ layout = "column", links }: SocialLinksProps) {
               rel="noreferrer"
               style={{ left: `${index * 74}px` }}
             >
+              <Image alt="" aria-hidden="true" className={styles.compactIcon} src={socialIcons[index]} />
               <span className={styles.visuallyHidden}>{link.label}</span>
             </a>
           </li>

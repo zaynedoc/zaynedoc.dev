@@ -8,14 +8,14 @@ import tabletBackdrop from "@/assets/navigation/navigation-tablet.png";
 import styles from "./SiteHeader.module.css";
 
 const navigationLinks = [
-  { href: "/", label: "/home" },
-  { href: "/expro", label: "/expro" },
-  { href: "/about", label: "/about" },
+  { href: "/", label: "/home", disabled: false },
+  { href: "/expro", label: "/expro", disabled: false },
+  { href: "/about", label: "/about", disabled: true },
 ] as const;
 
 export function SiteHeader() {
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-theme-color="#ffffff">
       <div className={styles.backdrops} aria-hidden="true">
         <Image
           alt=""
@@ -53,7 +53,11 @@ export function SiteHeader() {
           <ul className={styles.menu}>
             {navigationLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href}>{link.label}</Link>
+                {link.disabled ? (
+                  <span aria-disabled="true" className={styles.disabledLink}>{link.label}</span>
+                ) : (
+                  <Link href={link.href}>{link.label}</Link>
+                )}
               </li>
             ))}
           </ul>

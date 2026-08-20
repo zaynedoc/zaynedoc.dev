@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
+import { BrowserThemeColor } from "@/components/BrowserThemeColor/BrowserThemeColor";
+import { InvertedCursor } from "@/components/InvertedCursor/InvertedCursor";
+import { LenisScroll } from "@/components/LenisScroll/LenisScroll";
 import { SiteHeader } from "@/components/SiteHeader/SiteHeader";
 import "./globals.css";
 
@@ -39,6 +42,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <SiteHeader />
         {children}
+        <BrowserThemeColor />
+        <InvertedCursor />
+        <LenisScroll />
       </body>
     </html>
   );

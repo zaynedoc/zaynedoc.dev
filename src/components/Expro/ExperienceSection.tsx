@@ -9,7 +9,7 @@ import styles from "./ExperienceSection.module.css";
 
 export function ExperienceSection() {
   return (
-    <section className={styles.section} aria-labelledby="experience-heading">
+    <section className={styles.section} aria-labelledby="experience-heading" data-theme-color="#fcf9ff">
       <SectionBackground variant="experience" />
 
       <DecorativeLayer className={styles.stripes}>

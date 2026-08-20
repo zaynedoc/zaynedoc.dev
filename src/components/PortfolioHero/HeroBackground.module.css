@@ -8,8 +8,8 @@
   --hero-pink: #d89cef;
   --hero-lilac: #f0c8ff;
   --hero-dot-color: rgb(255 255 255 / 20%);
-  --hero-dot-size: 2px;
-  --hero-dot-step: 24px;
+  --hero-dot-size: 4px;
+  --hero-dot-step: 28px;
   --hero-blob-opacity: 0.76;
 
   background: linear-gradient(104deg, #cda7e7 0%, var(--hero-base) 48%, #c4a0e2 100%);
@@ -22,9 +22,12 @@
 }
 
 .blob {
+  animation: hero-ellipse-light var(--blob-light-duration, 10s) ease-in-out infinite alternate;
+  animation-delay: var(--blob-light-delay, 0s);
   opacity: var(--hero-blob-opacity);
   position: absolute;
   transform-origin: center;
+  will-change: filter, opacity;
 }
 
 .blobOne {
@@ -33,6 +36,8 @@
   --blob-left: 19%;
   --blob-top: -38%;
   --blob-blur: 108px;
+  --blob-light-delay: -4s;
+  --blob-light-duration: 4s;
 
   background: radial-gradient(ellipse at 50% 55%, var(--hero-top-bloom) 0%, rgb(243 217 255 / 68%) 43%, transparent 74%);
   filter: blur(var(--blob-blur));
@@ -49,6 +54,8 @@
   --blob-left: -13%;
   --blob-top: 14%;
   --blob-blur: 112px;
+  --blob-light-delay: -7s;
+  --blob-light-duration: 7s;
 
   background: linear-gradient(96deg, rgb(135 82 142 / 70%) 0%, rgb(170 102 189 / 63%) 48%, transparent 100%);
   border-radius: 50%;
@@ -66,6 +73,8 @@
   --blob-left: 14%;
   --blob-top: 33%;
   --blob-blur: 116px;
+  --blob-light-delay: -4s;
+  --blob-light-duration: 5s;
 
   background: radial-gradient(ellipse at 54% 42%, rgb(165 93 185 / 70%) 0%, rgb(196 119 220 / 48%) 48%, transparent 76%);
   border-radius: 50%;
@@ -83,6 +92,8 @@
   --blob-left: 63%;
   --blob-top: 2%;
   --blob-blur: 104px;
+  --blob-light-delay: -7s;
+  --blob-light-duration: 7s;
 
   background: linear-gradient(166deg, rgb(216 156 239 / 56%) 0%, rgb(173 105 207 / 72%) 56%, transparent 91%);
   border-radius: 48%;
@@ -100,6 +111,8 @@
   --blob-left: -15%;
   --blob-top: 67%;
   --blob-blur: 96px;
+  --blob-light-delay: -6s;
+  --blob-light-duration: 6s;
 
   background: radial-gradient(ellipse at 65% 30%, var(--hero-lilac) 0%, rgb(240 200 255 / 43%) 51%, transparent 78%);
   border-radius: 50%;
@@ -112,13 +125,33 @@
 }
 
 .dots {
-  background-image: radial-gradient(circle, var(--hero-dot-color) 0 var(--hero-dot-size), transparent calc(var(--hero-dot-size) + 0.25px));
-  background-position: 0 0;
-  background-size: var(--hero-dot-step) var(--hero-dot-step);
+  display: block;
+  height: 100%;
   inset: 0;
   opacity: 0.76;
   position: absolute;
+  width: 100%;
 }
+
+@keyframes hero-ellipse-light {
+  from {
+    filter: blur(var(--blob-blur)) brightness(0.8) saturate(1);
+    opacity: calc(var(--hero-blob-opacity) - 0.11);
+  }
+
+  to {
+    filter: blur(var(--blob-blur)) brightness(1.34) saturate(1.22);
+    opacity: calc(var(--hero-blob-opacity) + 0.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob {
+    animation: none;
+    will-change: auto;
+  }
+}
+
 
 @media (max-width: 64rem) {
   .background {

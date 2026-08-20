@@ -15,7 +15,7 @@ export function PortfolioHero({ config }: PortfolioHeroProps) {
   const isExpro = config.contentLayout === "expro";
 
   return (
-    <section className={styles.hero} aria-label="Portfolio hero">
+    <section className={styles.hero} aria-label="Portfolio hero" data-cursor-tone="dark" data-theme-color="#cba5e5">
       <HeroBackground />
       <HeroDecorations isExpro={isExpro} />
       <div className={`${styles.content} ${isExpro ? styles.exproContent : styles.homeContent}`}>

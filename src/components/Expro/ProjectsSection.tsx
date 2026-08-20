@@ -9,7 +9,7 @@ import styles from "./ProjectsSection.module.css";
 
 export function ProjectsSection() {
   return (
-    <section className={styles.section} aria-labelledby="projects-heading">
+    <section className={styles.section} aria-labelledby="projects-heading" data-theme-color="#fcf9ff">
       <SectionBackground variant="projects" />
 
       <DecorativeLayer className={styles.stripes}>
