@@ -1,13 +1,15 @@
 import Image from "next/image";
 
 import { DecorativeLayer } from "@/components/DecorativeLayer/DecorativeLayer";
+import { ExperienceCard } from "@/components/ExperienceCard/ExperienceCard";
 import { SectionBackground } from "@/components/SectionBackground/SectionBackground";
+import { experienceItems } from "@/data/experience";
 
 import styles from "./ExperienceSection.module.css";
 
 export function ExperienceSection() {
   return (
-    <section className={styles.section} aria-label="Experience">
+    <section className={styles.section} aria-labelledby="experience-heading">
       <SectionBackground variant="experience" />
 
       <DecorativeLayer className={styles.stripes}>
@@ -32,6 +34,17 @@ export function ExperienceSection() {
           <Image alt="" fill priority sizes="293px" src="/mg-sticker.png" />
         </div>
       </DecorativeLayer>
+
+      <div className={styles.content}>
+        <div className={styles.headingGroup}>
+          <h2 className={styles.heading} id="experience-heading">Experience <span aria-hidden="true">↓</span></h2>
+          <div className={styles.headingRule} aria-hidden="true" />
+        </div>
+
+        <div className={styles.entries}>
+          {experienceItems.map((item) => <ExperienceCard item={item} key={item.organization} />)}
+        </div>
+      </div>
     </section>
   );
 }

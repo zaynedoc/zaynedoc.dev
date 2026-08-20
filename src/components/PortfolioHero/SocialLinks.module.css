@@ -23,7 +23,7 @@
   font-size: 36px;
   font-weight: 500;
   gap: 15px;
-  line-height: 1;
+  line-height: var(--line-height-display);
   text-decoration: none;
   white-space: nowrap;
 }

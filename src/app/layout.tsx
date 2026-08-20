@@ -1,16 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+
 import { SiteHeader } from "@/components/SiteHeader/SiteHeader";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const zalandoSemiExpanded = localFont({
+  src: "../../font/ZalandoSans-SemiExpanded.ttf",
+  variable: "--font-zalando-semi-expanded",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const zalandoExpanded = localFont({
+  src: [
+    {
+      path: "../../font/ZalandoSans-Expanded.ttf",
+      style: "normal",
+      weight: "400",
+    },
+    {
+      path: "../../font/ZalandoSans-ExpandedItalic.ttf",
+      style: "italic",
+      weight: "400",
+    },
+  ],
+  variable: "--font-zalando-expanded",
 });
 
 export const metadata: Metadata = {
@@ -23,10 +35,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable}`}
-    >
+    <html lang="en" className={`${zalandoSemiExpanded.variable} ${zalandoExpanded.variable}`}>
       <body>
         <SiteHeader />
         {children}

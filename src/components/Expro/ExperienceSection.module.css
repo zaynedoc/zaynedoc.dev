@@ -5,6 +5,50 @@
   position: relative;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+  min-height: 1440px;
+  padding: 100px;
+  position: relative;
+  z-index: var(--layer-content);
+}
+
+.headingGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+  width: 648px;
+}
+
+.heading {
+  background: linear-gradient(104deg, #d262f8 1.45%, rgb(213 145 242 / 95%) 50.98%, rgb(226 183 255 / 90%) 100.5%);
+  background-clip: text;
+  color: transparent;
+  font-family: var(--font-display);
+  font-size: 50px;
+  font-weight: 400;
+  line-height: var(--line-height-display);
+  margin: 0;
+}
+
+.headingRule {
+  background: linear-gradient(129deg, #d262f8 1.45%, rgb(213 145 242 / 95%) 50.98%, rgb(226 183 255 / 90%) 100.5%);
+  height: 32px;
+  width: 100%;
+}
+
+.entries {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 50px;
+  max-width: 760px;
+  min-height: 0;
+}
+
 .stripes,
 .curves,
 .stickers {

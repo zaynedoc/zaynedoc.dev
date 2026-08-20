@@ -16,7 +16,7 @@
   font-size: 200px;
   font-weight: 400;
   left: 0;
-  line-height: 1;
+  line-height: var(--line-height-display);
   position: absolute;
   top: 11px;
   white-space: nowrap;
@@ -25,7 +25,7 @@
 
 .shadowMark {
   height: auto;
-  left: 864px;
+  left: 1000px;
   filter: brightness(0.82) saturate(1.3);
   position: absolute;
   top: -60px;
@@ -46,19 +46,22 @@
 }
 
 .foreground {
+  align-items: flex-start;
+  display: flex;
   filter: drop-shadow(0 4px 4px rgb(0 0 0 / 25%));
-  height: 84px;
   left: 225px;
   position: absolute;
   top: 44.5px;
-  width: 520px;
+  width: max-content;
   z-index: 1;
 }
 
 .letterform {
   height: auto;
-  left: 320px;
-  position: absolute;
+  flex: none;
+  margin-left: 8px;
+  order: 2;
+  position: relative;
   top: -22px;
   width: 155.832px;
 }
@@ -70,9 +73,9 @@
   font-family: var(--font-display);
   font-size: 50px;
   font-weight: 400;
-  left: 0;
-  line-height: 1;
-  position: absolute;
+  line-height: var(--line-height-display);
+  order: 1;
+  position: relative;
   top: 22px;
   white-space: nowrap;
 }
@@ -149,7 +152,7 @@
   }
 
   .letterform {
-    left: 265px;
+    margin-left: 6px;
     top: -12px;
     width: 76px;
   }

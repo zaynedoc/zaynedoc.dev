@@ -45,7 +45,7 @@
   font-size: 30px;
   font-weight: 500;
   justify-content: center;
-  line-height: 1;
+  line-height: var(--line-height-display);
   padding: 10px 40px;
   text-decoration: none;
   white-space: nowrap;
@@ -62,7 +62,7 @@
   font-size: 24px;
   font-weight: 500;
   gap: 30px;
-  line-height: 1;
+  line-height: var(--line-height-display);
   list-style: none;
   margin: 0;
   padding: 15px 40px;
