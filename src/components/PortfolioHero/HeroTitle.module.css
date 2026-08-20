@@ -46,6 +46,7 @@
 }
 
 .foreground {
+  filter: drop-shadow(0 4px 4px rgb(0 0 0 / 25%));
   height: 84px;
   left: 225px;
   position: absolute;
@@ -80,6 +81,11 @@
   display: none;
 }
 
+.exproTitle .foreground {
+  left: 270px;
+  top: 91px;
+}
+
 @media (max-width: 64rem) {
   .title {
     margin-block: -13px;
@@ -88,6 +94,11 @@
   }
 
   .foreground {
+    left: 294px;
+    top: 95px;
+  }
+
+  .exproTitle .foreground {
     left: 294px;
     top: 95px;
   }

@@ -1,3 +1,7 @@
+import type { StaticImageData } from "next/image";
+
+import exproRolesTexture from "@/assets/hero/expro-roles-texture.png";
+
 export type SocialLink = {
   href: string;
   label: string;
@@ -5,11 +9,17 @@ export type SocialLink = {
 };
 
 export type HeroConfig = {
+  contentLayout: "home" | "expro";
   name: string;
+  roles?: {
+    text: string;
+    texture: StaticImageData;
+  };
   socialLinks: readonly SocialLink[];
 };
 
 export const homeHeroConfig: HeroConfig = {
+  contentLayout: "home",
   name: "Zayne Dockery",
   socialLinks: [
     {
@@ -28,4 +38,14 @@ export const homeHeroConfig: HeroConfig = {
       text: "zaynedoc.dev",
     },
   ],
+};
+
+export const exproHeroConfig: HeroConfig = {
+  contentLayout: "expro",
+  name: "Zayne Dockery",
+  roles: {
+    text: "Figma Campus Leader • Web Dev @ KDI • SWE Intern @ BNY • Outreach @ KH",
+    texture: exproRolesTexture,
+  },
+  socialLinks: homeHeroConfig.socialLinks,
 };

@@ -11,13 +11,14 @@ import styles from "./SocialLinks.module.css";
 const socialIcons: readonly StaticImageData[] = [githubIcon, linkedInIcon, websiteIcon];
 
 type SocialLinksProps = {
+  layout?: "column" | "row";
   links: readonly SocialLink[];
 };
 
-export function SocialLinks({ links }: SocialLinksProps) {
+export function SocialLinks({ layout = "column", links }: SocialLinksProps) {
   return (
     <>
-      <ul className={styles.desktopList} aria-label="Social links">
+      <ul className={`${styles.desktopList} ${layout === "row" ? styles.rowList : ""}`} aria-label="Social links">
         {links.map((link, index) => (
           <li key={link.href}>
             <a href={link.href} target="_blank" rel="noreferrer">
