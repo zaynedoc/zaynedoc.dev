@@ -1,0 +1,24 @@
+.background {
+  --experience-background-height: 5840px;
+  --experience-background-width: 7680px;
+
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  z-index: var(--layer-background);
+}
+
+.experience {
+  background: #fcf9ff;
+}
+
+.artwork {
+  height: var(--experience-background-height);
+  left: 50%;
+  max-width: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--experience-background-width);
+}

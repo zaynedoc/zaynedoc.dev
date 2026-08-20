@@ -1,0 +1,87 @@
+.section {
+  isolation: isolate;
+  min-height: 1440px;
+  overflow: clip;
+  position: relative;
+}
+
+.stripes,
+.curves,
+.stickers {
+  pointer-events: none;
+  position: absolute;
+  z-index: var(--layer-decoration);
+}
+
+.stripes {
+  aspect-ratio: 4012 / 3332;
+  opacity: 0.78;
+  right: max(-172px, -9vw);
+  top: 10vh;
+  width: min(62vw, 1200px);
+}
+
+.stripes img {
+  object-fit: fill;
+}
+
+.curves {
+  aspect-ratio: 1536 / 1160;
+  right: 0;
+  top: 0;
+  width: 384px;
+}
+
+.curves img {
+  object-fit: contain;
+}
+
+.stickers {
+  inset: 0;
+}
+
+.figmaSticker,
+.kdiSticker,
+.khSticker,
+.mgSticker {
+  position: absolute;
+}
+
+.figmaSticker {
+  height: 346px;
+  right: 372px;
+  top: 200px;
+  width: 346px;
+}
+
+.kdiSticker {
+  height: 414px;
+  right: 71px;
+  top: 390px;
+  transform: rotate(8.0deg);
+  width: 414px;
+}
+
+.khSticker {
+  height: 270px;
+  right: 63px;
+  top: 725px;
+  transform: rotate(-5.14deg);
+  width: 809px;
+}
+
+.mgSticker {
+  height: 293px;
+  right: 235px;
+  top: 1010px;
+  transform: rotate(-14.71deg);
+  width: 293px;
+}
+
+.figmaSticker img,
+.kdiSticker img,
+.khSticker img,
+.mgSticker img {
+  filter: drop-shadow(0 8px 10px rgb(61 39 78 / 18%));
+  object-fit: contain;
+}
