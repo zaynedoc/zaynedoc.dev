@@ -2,7 +2,8 @@
   left: clamp(8rem, 16vw, 24rem);
   pointer-events: none;
   position: absolute;
-  top: clamp(17rem, 27vw, 28rem);
+  top: 50%;
+  transform: translateY(-50%);
   width: clamp(24rem, 35vw, 44rem);
   z-index: var(--layer-content);
 }

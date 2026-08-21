@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 import { DecorativeLayer } from "@/components/DecorativeLayer/DecorativeLayer";
 import { ProjectCard } from "@/components/ProjectCard/ProjectCard";
 import { ProjectVisualizer } from "@/components/ProjectVisualizer/ProjectVisualizer";
+import { ResponsivePublicImage } from "@/components/ResponsivePublicImage/ResponsivePublicImage";
 import { SectionBackground } from "@/components/SectionBackground/SectionBackground";
 import { projectItems } from "@/data/projects";
 
@@ -19,15 +19,15 @@ export function ProjectsSection() {
       <SectionBackground variant="projects" />
 
       <DecorativeLayer className={styles.stripes}>
-        <Image alt="" fill sizes="1200px" src="/expro-project-stripes.png" />
+        <ResponsivePublicImage alt="" webpSrc="/expro-project-stripes.webp" />
       </DecorativeLayer>
 
       <DecorativeLayer className={styles.curves}>
-        <Image alt="" fill sizes="384px" src="/expro-project-curves.png" />
+        <ResponsivePublicImage alt="" webpSrc="/expro-project-curves.webp" />
       </DecorativeLayer>
 
       <DecorativeLayer className={styles.squares}>
-        <Image alt="" fill sizes="384px" src="/expro-project-squares.png" />
+        <ResponsivePublicImage alt="" webpSrc="/expro-project-squares.webp" />
       </DecorativeLayer>
 
       <ProjectVisualizer

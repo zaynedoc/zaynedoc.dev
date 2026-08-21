@@ -25,12 +25,14 @@ export function PortfolioHero({ config }: PortfolioHeroProps) {
             <div className={styles.exproRoles}>
               <HeroRoles text={config.roles.text} texture={config.roles.texture} />
             </div>
-            <SocialLinks layout="row" links={config.socialLinks} />
+            {/* Retains the former social row's footprint, without exposing links on Expro. */}
+            <div aria-hidden="true" className={styles.exproSocialSpacer} />
           </div>
         ) : (
           <SocialLinks links={config.socialLinks} />
         )}
       </div>
+      {isExpro ? <span aria-hidden="true" className={styles.scrollCue}>↓</span> : null}
     </section>
   );
 }

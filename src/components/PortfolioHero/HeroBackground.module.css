@@ -225,6 +225,6 @@
     --blob-height: 38vh;
     --blob-left: -47%;
     --blob-top: 71%;
-    --blob-blur: 70px;
+    --blob-blur: 100px;
   }
 }

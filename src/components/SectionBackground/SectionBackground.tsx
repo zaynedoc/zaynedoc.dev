@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import experienceBackground from "@/assets/bg/expro-experience-background.png";
-import projectBackground from "@/assets/bg/expro-project-background.png";
+import experienceBackground from "@/assets/bg/expro-experience-background.webp";
+import projectBackground from "@/assets/bg/expro-project-background.webp";
 
 import styles from "./SectionBackground.module.css";
 
@@ -17,7 +17,7 @@ const backgrounds = {
 export function SectionBackground({ variant }: SectionBackgroundProps) {
   return (
     <div className={`${styles.background} ${styles[variant]}`} aria-hidden="true">
-      <Image alt="" className={styles.artwork} height={5840} src={backgrounds[variant]} unoptimized width={7680} />
+      <Image alt="" className={styles.artwork} height={1460} src={backgrounds[variant]} unoptimized width={1920} />
     </div>
   );
 }

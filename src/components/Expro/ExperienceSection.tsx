@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 import { DecorativeLayer } from "@/components/DecorativeLayer/DecorativeLayer";
 import { ExperienceCard } from "@/components/ExperienceCard/ExperienceCard";
+import { ResponsivePublicImage } from "@/components/ResponsivePublicImage/ResponsivePublicImage";
 import { SectionBackground } from "@/components/SectionBackground/SectionBackground";
 import { experienceItems } from "@/data/experience";
 
@@ -18,11 +18,11 @@ export function ExperienceSection() {
       <SectionBackground variant="experience" />
 
       <DecorativeLayer className={styles.stripes}>
-        <Image alt="" fill priority sizes="1003px" src="/expro-experience-stripes.png" />
+        <ResponsivePublicImage alt="" webpSrc="/expro-experience-stripes.webp" />
       </DecorativeLayer>
 
       <DecorativeLayer className={styles.curves}>
-        <Image alt="" fill priority sizes="384px" src="/expro-experience-curves.png" />
+        <ResponsivePublicImage alt="" webpSrc="/expro-experience-curves.webp" />
       </DecorativeLayer>
 
       <div className={styles.content}>
@@ -46,16 +46,16 @@ export function ExperienceSection() {
 
       <DecorativeLayer className={styles.stickers}>
         <div className={styles.figmaSticker}>
-          <Image alt="" fill priority sizes="346px" src="/figma-sticker.png" />
+          <ResponsivePublicImage alt="" pngSrc="/logos/hdm/figma-sticker.png" webpSrc="/logos/ldm/figma-sticker.webp" />
         </div>
         <div className={styles.kdiSticker}>
-          <Image alt="" fill priority sizes="414px" src="/kdi-sticker.png" />
+          <ResponsivePublicImage alt="" pngSrc="/logos/hdm/kdi-sticker.png" webpSrc="/logos/ldm/kdi-sticker.webp" />
         </div>
         <div className={styles.khSticker}>
-          <Image alt="" fill priority sizes="809px" src="/kh-sticker.png" />
+          <ResponsivePublicImage alt="" pngSrc="/logos/hdm/kh-sticker.png" webpSrc="/logos/ldm/kh-sticker.webp" />
         </div>
         <div className={styles.mgSticker}>
-          <Image alt="" fill priority sizes="293px" src="/mg-sticker.png" />
+          <ResponsivePublicImage alt="" pngSrc="/logos/hdm/mg-sticker.png" webpSrc="/logos/ldm/mg-sticker.webp" />
         </div>
       </DecorativeLayer>
     </section>

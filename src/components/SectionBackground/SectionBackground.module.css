@@ -1,7 +1,5 @@
 .background {
-  --experience-background-height: 5840px;
-  --experience-background-width: 7680px;
-  --section-background-wash: rgb(252 249 255 / 50%);
+  --section-background-wash: rgb(252 249 255 / 0%);
 
   inset: 0;
   overflow: hidden;
@@ -15,21 +13,25 @@
 }
 
 .artwork {
-  height: var(--experience-background-height);
-  left: 50%;
+  height: 100%;
+  inset: 0;
   max-width: none;
+  object-fit: cover;
+  object-position: center;
   position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(1.001);
-  width: var(--experience-background-width);
+  transform: none;
+  width: 100%;
   z-index: 0;
 }
 
 .background::after {
-  background: var(--section-background-wash);
   content: "";
   inset: 0;
   pointer-events: none;
   position: absolute;
-  z-index: 1;
+}
+
+.background::after {
+  background: var(--section-background-wash);
+  z-index: 2;
 }
