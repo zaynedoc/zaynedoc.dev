@@ -10,6 +10,8 @@
   --color-ink: #241737;
   --color-ink-muted: #5e536d;
   --color-focus: #4b238a;
+  --page-transition-cover-duration: 300ms;
+  --page-transition-reveal-duration: 1000ms;
 
   --background: var(--color-page);
   --foreground: var(--color-ink);

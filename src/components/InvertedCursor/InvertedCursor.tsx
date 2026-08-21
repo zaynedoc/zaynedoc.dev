@@ -7,23 +7,20 @@ import styles from "./InvertedCursor.module.css";
 export function InvertedCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const contrastRef = useRef<HTMLDivElement>(null);
-  const frameRef = useRef<number | null>(null);
-  const pointRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    const drawCursor = () => {
+    const drawCursor = (x: number, y: number) => {
       const cursor = cursorRef.current;
       const contrast = contrastRef.current;
 
       if (cursor) {
-        cursor.style.transform = `translate3d(${pointRef.current.x}px, ${pointRef.current.y}px, 0) translate(-50%, -50%)`;
+        cursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
         cursor.style.opacity = "1";
       }
 
       if (contrast) {
         const size = 22;
         const radius = size / 2;
-        const { x, y } = pointRef.current;
         const darkSurface = [...document.querySelectorAll<HTMLElement>("[data-cursor-tone='dark']")]
           .map((surface) => surface.getBoundingClientRect())
           .find((surface) => (
@@ -44,8 +41,6 @@ export function InvertedCursor() {
           contrast.style.clipPath = `inset(${top}px ${right}px ${bottom}px ${left}px)`;
         }
       }
-
-      frameRef.current = null;
     };
 
     const moveCursor = (event: PointerEvent) => {
@@ -53,11 +48,7 @@ export function InvertedCursor() {
         return;
       }
 
-      pointRef.current = { x: event.clientX, y: event.clientY };
-
-      if (frameRef.current === null) {
-        frameRef.current = window.requestAnimationFrame(drawCursor);
-      }
+      drawCursor(event.clientX, event.clientY);
     };
 
     const hideCursor = () => {
@@ -73,9 +64,6 @@ export function InvertedCursor() {
       window.removeEventListener("pointermove", moveCursor);
       window.removeEventListener("blur", hideCursor);
 
-      if (frameRef.current !== null) {
-        window.cancelAnimationFrame(frameRef.current);
-      }
     };
   }, []);
 

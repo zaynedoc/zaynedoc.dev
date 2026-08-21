@@ -1,8 +1,15 @@
 import type { PortfolioDetails } from "./portfolio-details";
 
+export type ProjectMedia = {
+  alt?: string;
+  src: string;
+  type: "image" | "video";
+};
+
 export type ProjectItem = {
   descriptor: string;
   href: string;
+  media?: ProjectMedia;
   title: string;
 } & PortfolioDetails;
 
@@ -10,6 +17,8 @@ export const projectItems: readonly ProjectItem[] = [
   {
     descriptor: "Hackathon (BloomHacks)",
     href: "https://github.com/Kevinli7673/Fleurish",
+    // Set to { type: "video", src: "/projects/fleurish.mp4" } or a PNG when ready.
+    media: { type: "video", src: "/projects/mp4/fleurish.mp4" },
     title: "Fleurish",
     timeline: { start: "June 2026", end: "July 2026" },
     highlights: [
@@ -21,6 +30,7 @@ export const projectItems: readonly ProjectItem[] = [
   {
     descriptor: "Organization Project",
     href: "https://github.com/Knights-Design-Interactive/KDI-Website",
+    media: { type: "image", src: "/projects/png/kdi-website.png" },
     title: "KDI’s Website",
     timeline: { start: "August 2026", end: "Present" },
     highlights: [
@@ -31,6 +41,7 @@ export const projectItems: readonly ProjectItem[] = [
   {
     descriptor: "Hackathon (Project Launch ’26)",
     href: "https://github.com/project-vigil-knighthacks/vigil",
+    media: { type: "video", src: "/projects/mp4/vigil.mp4" },
     title: "Vigil SIEM",
     timeline: { start: "January 2026", end: "April 2026" },
     highlights: [
@@ -42,6 +53,7 @@ export const projectItems: readonly ProjectItem[] = [
   {
     descriptor: "Hackathon (HackUSF ’26)",
     href: "https://github.com/hackusf-2026-crisis-net/crisis-net",
+    media: { type: "video", src: "/projects/mp4/crisis-net.mp4" },
     title: "Crisis-Net.tech",
     timeline: { start: "March 2026" },
     highlights: [

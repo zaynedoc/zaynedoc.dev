@@ -16,6 +16,7 @@
   gap: 75em;
   min-height: 1440em;
   padding: 100em;
+  pointer-events: none;
   position: relative;
   z-index: var(--layer-content);
 }
@@ -54,6 +55,7 @@
   margin-left: 50em;
   max-width: 760em;
   min-height: 0;
+  pointer-events: auto;
 }
 
 .stripes,
@@ -91,6 +93,7 @@
 .stickers {
   font-size: var(--foreground-pixel);
   inset: 0;
+  pointer-events: auto;
 }
 
 .figmaSticker,
@@ -137,6 +140,17 @@
 .mgSticker img {
   filter: drop-shadow(0 8em 10em rgb(61 39 78 / 18%));
   object-fit: contain;
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .figmaSticker:hover img,
+  .kdiSticker:hover img,
+  .khSticker:hover img,
+  .mgSticker:hover img {
+    filter: drop-shadow(8em 16em 17em rgb(61 39 78 / 30%)) brightness(1.045);
+    transform: translate3d(7em, -10em, 0) scale(1.075);
+  }
 }
 
 /* Keep the content and sticker artwork proportional once the viewport is
@@ -189,12 +203,24 @@
   }
 
   .content {
+    align-items: center;
     gap: 45em;
     min-height: 0;
   }
 
   .headingGroup {
+    align-items: center;
     width: min(648em, calc(100vw - 200em));
+  }
+
+  .heading {
+    text-align: center;
+  }
+
+  .entries {
+    align-items: center;
+    margin-left: 0;
+    width: 100%;
   }
 
   .entries {

@@ -81,6 +81,11 @@
   color: var(--color-lavender-deep);
 }
 
+.menu .activeLink {
+  color: var(--color-lavender-deep);
+  filter: drop-shadow(0 0 0.34em rgb(148 112 217 / 58%));
+}
+
 .menu a:focus-visible,
 .wordmark:focus-visible {
   border-radius: 2px;

@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   gap: 16em;
-  text-shadow: 0 4em 2.5em rgb(0 0 0 / 25%);
   width: 100%;
 }
 
@@ -31,6 +30,7 @@
   font-size: 40em;
   font-weight: 400;
   line-height: var(--line-height-display);
+  filter: drop-shadow(0 3px 5px rgb(0 0 0 / 26%));
   transition: background 180ms ease, filter 180ms ease;
 }
 
@@ -54,6 +54,7 @@
   font-size: 30em;
   font-style: italic;
   line-height: var(--line-height-display);
+  filter: drop-shadow(0 2px 4px rgb(0 0 0 / 15%));
   text-decoration: none;
   transition: background 180ms ease, filter 180ms ease, text-decoration-color 180ms ease;
 }
@@ -65,4 +66,19 @@
   text-decoration: underline;
   text-decoration-color: #9c51b8;
   text-underline-offset: 0.18em;
+}
+
+@media (max-width: 37.5rem) {
+  .card {
+    align-items: center;
+    text-align: center;
+  }
+
+  .trigger {
+    text-align: center;
+  }
+
+  .organization {
+    align-self: auto;
+  }
 }

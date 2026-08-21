@@ -1,9 +1,12 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import desktopBackdrop from "@/assets/navigation/navigation-desktop.png";
 import phoneBackdrop from "@/assets/navigation/navigation-phone.png";
 import tabletBackdrop from "@/assets/navigation/navigation-tablet.png";
+import { PageTransitionLink } from "@/components/PageReveal/PageTransitionLink";
 
 import styles from "./SiteHeader.module.css";
 
@@ -14,6 +17,8 @@ const navigationLinks = [
 ] as const;
 
 export function SiteHeader() {
+  const pathname = usePathname();
+
   return (
     <header className={styles.header} data-theme-color="#ffffff">
       <div className={styles.backdrops} aria-hidden="true">
@@ -44,10 +49,10 @@ export function SiteHeader() {
       </div>
 
       <div className={styles.content}>
-        <Link className={styles.wordmark} href="/" aria-label="zaynedoc.dev home">
+        <PageTransitionLink className={styles.wordmark} href="/" aria-label="zaynedoc.dev home">
           <span>zaynedoc</span>
           <small>.dev</small>
-        </Link>
+        </PageTransitionLink>
 
         <nav aria-label="Primary navigation">
           <ul className={styles.menu}>
@@ -56,7 +61,13 @@ export function SiteHeader() {
                 {link.disabled ? (
                   <span aria-disabled="true" className={styles.disabledLink}>{link.label}</span>
                 ) : (
-                  <Link href={link.href}>{link.label}</Link>
+                  <PageTransitionLink
+                    aria-current={pathname === link.href ? "page" : undefined}
+                    className={pathname === link.href ? styles.activeLink : undefined}
+                    href={link.href}
+                  >
+                    {link.label}
+                  </PageTransitionLink>
                 )}
               </li>
             ))}

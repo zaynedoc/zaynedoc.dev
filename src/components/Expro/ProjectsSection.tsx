@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { DecorativeLayer } from "@/components/DecorativeLayer/DecorativeLayer";
 import { ProjectCard } from "@/components/ProjectCard/ProjectCard";
+import { ProjectVisualizer } from "@/components/ProjectVisualizer/ProjectVisualizer";
 import { SectionBackground } from "@/components/SectionBackground/SectionBackground";
 import { projectItems } from "@/data/projects";
 
@@ -28,6 +29,11 @@ export function ProjectsSection() {
       <DecorativeLayer className={styles.squares}>
         <Image alt="" fill sizes="384px" src="/expro-project-squares.png" />
       </DecorativeLayer>
+
+      <ProjectVisualizer
+        projects={projectItems}
+        selectedProject={openIndex === null ? null : projectItems[openIndex]}
+      />
 
       <div className={styles.content}>
         <div className={styles.headingGroup}>

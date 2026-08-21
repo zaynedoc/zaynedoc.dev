@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { BrowserThemeColor } from "@/components/BrowserThemeColor/BrowserThemeColor";
 import { InvertedCursor } from "@/components/InvertedCursor/InvertedCursor";
 import { LenisScroll } from "@/components/LenisScroll/LenisScroll";
+import { PageReveal } from "@/components/PageReveal/PageReveal";
 import { SiteHeader } from "@/components/SiteHeader/SiteHeader";
 import "./globals.css";
 
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${zalandoSemiExpanded.variable} ${zalandoExpanded.variable}`}>
       <body>
+        <PageReveal />
         <SiteHeader />
         {children}
         <BrowserThemeColor />

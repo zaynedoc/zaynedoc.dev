@@ -127,11 +127,23 @@
   }
 
   .content {
+    align-items: center;
     gap: 45em;
     min-height: 700px;
   }
 
   .headingGroup {
+    align-items: center;
     width: min(648em, calc(100vw - 200em));
+  }
+
+  .heading {
+    text-align: center;
+  }
+
+  .entries {
+    align-items: center;
+    margin-right: 0;
+    width: 100%;
   }
 }
