@@ -80,10 +80,12 @@
 
 .curves {
   aspect-ratio: 1536 / 1160;
-  font-size: var(--edge-decoration-pixel);
   right: 0;
   top: 0;
-  width: 384em;
+  /* This export spans four grid cells; the masthead curve spans three.
+     Use the shared four-cell value so both decorations stay registered at
+     every desktop width (especially the 1080px minimum clamp). */
+  width: var(--expro-project-square-width, clamp(14rem, 20vw, 24rem));
 }
 
 .curves img {
@@ -164,10 +166,6 @@
     min-height: clamp(860px, 90vw, 922px);
   }
 
-  .curves {
-    font-size: initial;
-    width: min(384px, 20vw);
-  }
 }
 
 /* Tablet keeps the desktop sticker composition, but progressively moves it
@@ -227,6 +225,15 @@
     max-width: 760em;
   }
 
+  .stripes {
+    display: none;
+  }
+
+  /* Four grid units wide, matching the Project square export at this size. */
+  .curves {
+    width: var(--expro-project-square-width, 14rem);
+  }
+
   /* On phones, the stickers become a normal-flow cluster below the list.
      This means an expanded detail card pushes every sticker down with it. */
   .stickers {
@@ -274,10 +281,10 @@
   }
 
   .khSticker {
-    right: -75em;
+    right: -90em;
   }
 
   .mgSticker {
-    left: 155em;
+    left: 0em;
   }
 }

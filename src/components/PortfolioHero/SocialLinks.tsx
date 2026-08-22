@@ -32,7 +32,7 @@ export function SocialLinks({ layout = "column", links }: SocialLinksProps) {
         {links.map((link, index) => (
           <li key={link.href}>
             <a
-              className={styles.compactLink}
+              className={`${styles.compactLink} ${index === 2 ? styles.figmaCompactLink : ""}`}
               href={link.href}
               target="_blank"
               rel="noreferrer"

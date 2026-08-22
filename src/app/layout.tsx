@@ -29,6 +29,12 @@ const zalandoExpanded = localFont({
   variable: "--font-zalando-expanded",
 });
 
+const zalandoExpandedExtraBold = localFont({
+  src: "../../font/ZalandoSansExpanded-ExtraBold.ttf",
+  variable: "--font-zalando-expanded-extra-bold",
+  weight: "800",
+});
+
 export const metadata: Metadata = {
   title: {
     default: "zaynedoc.dev",
@@ -39,7 +45,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${zalandoSemiExpanded.variable} ${zalandoExpanded.variable}`}>
+    <html lang="en" className={`${zalandoSemiExpanded.variable} ${zalandoExpanded.variable} ${zalandoExpandedExtraBold.variable}`}>
       <body>
         <PageReveal />
         <SiteHeader />

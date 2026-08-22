@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
+import { ExproMasthead } from "@/components/Expro/ExproMasthead";
 import { ExperienceSection } from "@/components/Expro/ExperienceSection";
 import { ProjectsSection } from "@/components/Expro/ProjectsSection";
-import { PortfolioHero } from "@/components/PortfolioHero/PortfolioHero";
-import { exproHeroConfig } from "@/data/hero";
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Expro",
@@ -11,9 +11,10 @@ export const metadata: Metadata = {
 
 export default function ExproPage() {
   return (
-    <main>
-      <PortfolioHero config={exproHeroConfig} />
+    <main className={styles.page}>
+      <ExproMasthead />
       <ExperienceSection />
+      <ExproMasthead decorative />
       <ProjectsSection />
     </main>
   );

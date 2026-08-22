@@ -95,4 +95,12 @@
     box-shadow: 0 0 14px 5px rgb(255 234 255 / 62%);
     outline: 1px solid rgb(255 255 255 / 72%);
   }
+
+  /* The Figma mark is not circular; the inherited globe-style hover halo
+     made it appear as though the icon had a ring around it on touch layouts. */
+  .figmaCompactLink:is(:hover, :focus-visible) {
+    background-color: transparent;
+    box-shadow: none;
+    outline: none;
+  }
 }

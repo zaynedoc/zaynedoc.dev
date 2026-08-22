@@ -39,6 +39,19 @@
   width: min(288px, 15vw);
 }
 
+/* Root gets the opposite corner composition from Expro for visual variety.
+   The artwork itself is unchanged; only its anchored corner is swapped. */
+.decorations:not(.exproDecorations) .squares {
+  left: auto;
+  right: 0;
+}
+
+.decorations:not(.exproDecorations) .curves {
+  left: 0;
+  right: auto;
+  transform: scaleX(-1);
+}
+
 .squares img,
 .curves img {
   height: 100%;

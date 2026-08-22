@@ -82,18 +82,16 @@
 
 .curves {
   aspect-ratio: 1152 / 1536;
-  font-size: var(--edge-decoration-pixel);
   left: 0;
   top: 0;
-  width: 384em;
+  width: var(--expro-hero-curve-width, clamp(10.5rem, 15vw, 18rem));
 }
 
 .squares {
   aspect-ratio: 1536 / 2304;
   bottom: 0;
-  font-size: var(--edge-decoration-pixel);
   left: 0;
-  width: 384em;
+  width: var(--expro-project-square-width, clamp(14rem, 20vw, 24rem));
 }
 
 .curves img,
@@ -111,11 +109,6 @@
     min-height: clamp(720px, 75vw, 768px);
   }
 
-  .curves,
-  .squares {
-    font-size: initial;
-    width: min(384px, 20vw);
-  }
 }
 
 @media (max-width: 37.5rem) {
@@ -145,5 +138,9 @@
     align-items: center;
     margin-right: 0;
     width: 100%;
+  }
+
+  .stripes {
+    display: none;
   }
 }
