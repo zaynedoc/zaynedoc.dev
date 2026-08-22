@@ -50,6 +50,10 @@
   .title {
     font-size: 5.5rem;
   }
+
+  .squares {
+    height: clamp(2.5rem, 5vw, 3.75rem);
+  }
 }
 
 @media (max-width: 37.5rem) {
@@ -64,6 +68,6 @@
   }
 
   .squares {
-    height: 5rem;
+    height: clamp(1.25rem, 5vw, 2rem);
   }
 }

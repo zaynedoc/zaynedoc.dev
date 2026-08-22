@@ -111,22 +111,28 @@
   .content {
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
     padding: 3rem 1.75rem;
   }
 
   .controls {
+    align-self: center;
     gap: 2.75rem;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    position: absolute;
   }
 
   .artwork {
-    grid-column: 2;
+    grid-column: 1;
     grid-row: 1;
-    width: min(36vw, 11rem);
+    width: max(12.5rem, min(56vw, 14rem));
   }
 
   .songCopy {
-    grid-column: 1 / -1;
+    grid-column: 1;
     text-align: center;
   }
 

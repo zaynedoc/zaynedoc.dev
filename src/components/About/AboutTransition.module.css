@@ -33,6 +33,10 @@
 
 @media (max-width: 37.5rem) {
   .transition {
+    display: none;
+  }
+
+  .transition {
     height: 5.5rem;
   }
 

@@ -143,6 +143,6 @@
   }
 
   .stars {
-    width: 13rem;
+    width: clamp(3rem, 14vw, 4.5rem);
   }
 }
