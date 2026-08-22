@@ -9,15 +9,10 @@ type DetailPanelProps = {
 };
 
 export function DetailPanel({ details, expanded, id }: DetailPanelProps) {
-  const timeline = details.timeline
-    ? `${details.timeline.start}${details.timeline.end ? ` — ${details.timeline.end}` : ""}`
-    : null;
-
   return (
     <div className={`${styles.details} ${expanded ? styles.expanded : ""}`} id={id}>
       <div className={styles.detailsInner}>
         <div className={styles.glassCard}>
-          {timeline ? <p className={styles.timeline}>{timeline}</p> : null}
           <ul className={styles.highlights}>
             {details.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
           </ul>

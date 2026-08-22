@@ -89,7 +89,7 @@ select {
 @media (hover: hover) and (pointer: fine) {
   body,
   body * {
-    cursor: none;
+    cursor: none !important;
   }
 }
 

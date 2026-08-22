@@ -1,0 +1,45 @@
+import Image from "next/image";
+
+import figmaIcon from "@/assets/hero/social-figma.svg";
+import githubIcon from "@/assets/hero/social-github.svg";
+import linkedInIcon from "@/assets/hero/social-linkedin.svg";
+import { PageTransitionLink } from "@/components/PageReveal/PageTransitionLink";
+
+import styles from "./SiteFooter.module.css";
+
+const navigationLinks = [
+  { href: "/", label: "/root" },
+  { href: "/expro", label: "/expro" },
+  { href: "/about", label: "/about" },
+] as const;
+
+const socialLinks = [
+  { href: "https://github.com/zaynedoc", icon: githubIcon, label: "GitHub" },
+  { href: "https://www.linkedin.com/in/zaynedoc/", icon: linkedInIcon, label: "LinkedIn" },
+  { href: "https://www.figma.com/@zaynedoc", icon: figmaIcon, label: "Figma" },
+] as const;
+
+export function SiteFooter() {
+  return (
+    <footer className={styles.footer} data-theme-color="#ffffff">
+      <a className={styles.email} href="mailto:zayne@zaynedoc.dev">zayne@zaynedoc.dev</a>
+      <nav aria-label="Footer navigation">
+        <ul className={styles.menu}>
+          {navigationLinks.map((link) => (
+            <li key={link.href}><PageTransitionLink href={link.href}>{link.label}</PageTransitionLink></li>
+          ))}
+        </ul>
+      </nav>
+      <ul className={styles.socials} aria-label="Social links">
+        {socialLinks.map((link) => (
+          <li key={link.href}>
+            <a aria-label={link.label} href={link.href} rel="noreferrer" target="_blank">
+              <Image alt="" aria-hidden="true" src={link.icon} />
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p className={styles.credit}>made with Figma</p>
+    </footer>
+  );
+}

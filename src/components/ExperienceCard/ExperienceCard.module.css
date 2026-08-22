@@ -47,19 +47,26 @@
 
 .organization {
   align-self: flex-start;
-  background: linear-gradient(180deg, #000 0%, rgb(40 40 40 / 90%) 100%);
-  background-clip: text;
-  color: transparent;
   font-family: var(--font-display);
-  font-size: 30em;
+  font-size: 27em;
   font-style: italic;
   line-height: var(--line-height-display);
   filter: drop-shadow(0 2px 4px rgb(0 0 0 / 15%));
+}
+
+.organizationTimeline,
+.organizationLink {
+  background: linear-gradient(180deg, #000 0%, rgb(40 40 40 / 90%) 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+.organizationLink {
   text-decoration: none;
   transition: background 180ms ease, filter 180ms ease, text-decoration-color 180ms ease;
 }
 
-.organization:is(:hover, :focus-visible) {
+.organizationLink:is(:hover, :focus-visible) {
   background-image: linear-gradient(180deg, #673278 0%, #a658c1 100%);
   filter: drop-shadow(0 0 5em rgb(173 105 207 / 42%));
   outline: none;

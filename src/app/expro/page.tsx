@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { ExproMasthead } from "@/components/Expro/ExproMasthead";
 import { ExperienceSection } from "@/components/Expro/ExperienceSection";
 import { ProjectsSection } from "@/components/Expro/ProjectsSection";
+import { SiteFooter } from "@/components/SiteFooter/SiteFooter";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function ExproPage() {
       <ExperienceSection />
       <ExproMasthead decorative />
       <ProjectsSection />
+      <SiteFooter />
     </main>
   );
 }

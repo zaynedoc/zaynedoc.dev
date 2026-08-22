@@ -48,6 +48,12 @@ export function InvertedCursor() {
         return;
       }
 
+      const cursor = cursorRef.current;
+      const target = event.target;
+      const isInteractive = target instanceof Element
+        && target.closest("a[href], button:not(:disabled), [role='button']") !== null;
+
+      cursor?.classList.toggle(styles.interactive, isInteractive);
       drawCursor(event.clientX, event.clientY);
     };
 
