@@ -16,14 +16,18 @@ export function ExproMasthead({ decorative = false }: ExproMastheadProps) {
       data-cursor-tone="dark"
       data-theme-color="#cba5e5"
     >
-      <HeroBackground />
+      <HeroBackground
+        animated={!decorative}
+        interactiveDots={!decorative}
+        pauseWhenOffscreen={!decorative}
+      />
       <div className={styles.artwork}>
         <div className={styles.curves}>
-          <ResponsivePublicImage alt="" webpSrc="/main-curves.webp" />
+          <ResponsivePublicImage alt="" decoding={decorative ? "async" : undefined} loading={decorative ? "lazy" : undefined} webpSrc="/main-curves.webp" />
         </div>
         {decorative ? (
           <div className={styles.squares}>
-            <ResponsivePublicImage alt="" webpSrc="/main-squares.webp" />
+            <ResponsivePublicImage alt="" decoding="async" loading="lazy" webpSrc="/main-squares.webp" />
           </div>
         ) : null}
       </div>

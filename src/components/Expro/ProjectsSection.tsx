@@ -19,15 +19,15 @@ export function ProjectsSection() {
       <SectionBackground variant="projects" />
 
       <DecorativeLayer className={styles.stripes}>
-        <ResponsivePublicImage alt="" webpSrc="/expro-project-stripes.webp" />
+        <ResponsivePublicImage alt="" decoding="async" loading="lazy" webpSrc="/expro-project-stripes.webp" />
       </DecorativeLayer>
 
       <DecorativeLayer className={styles.curves}>
-        <ResponsivePublicImage alt="" webpSrc="/expro-project-curves.webp" />
+        <ResponsivePublicImage alt="" decoding="async" loading="lazy" webpSrc="/expro-project-curves.webp" />
       </DecorativeLayer>
 
       <DecorativeLayer className={styles.squares}>
-        <ResponsivePublicImage alt="" webpSrc="/expro-project-squares.webp" />
+        <ResponsivePublicImage alt="" decoding="async" loading="lazy" webpSrc="/expro-project-squares.webp" />
       </DecorativeLayer>
 
       <ProjectVisualizer

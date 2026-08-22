@@ -2,6 +2,8 @@ import type { CSSProperties } from "react";
 
 type ResponsivePublicImageProps = {
   alt: string;
+  decoding?: "async" | "auto" | "sync";
+  loading?: "eager" | "lazy";
   pngSrc?: string;
   webpSrc: string;
 };
@@ -18,12 +20,12 @@ const fillStyle: CSSProperties = {
  * The lighter WebP is the default. Components can optionally reserve their
  * original PNG for large displays; this is used only for the sticker logos.
  */
-export function ResponsivePublicImage({ alt, pngSrc, webpSrc }: ResponsivePublicImageProps) {
+export function ResponsivePublicImage({ alt, decoding, loading, pngSrc, webpSrc }: ResponsivePublicImageProps) {
   return (
     <picture style={fillStyle}>
       {pngSrc ? <source media="(min-width: 1921px) and (min-height: 1081px)" srcSet={pngSrc} type="image/png" /> : null}
       {/* Static public WebPs are already optimized; picture selects only one source. */}
-      <img alt={alt} src={webpSrc} style={fillStyle} />
+      <img alt={alt} decoding={decoding} loading={loading} src={webpSrc} style={fillStyle} />
     </picture>
   );
 }

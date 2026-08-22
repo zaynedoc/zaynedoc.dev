@@ -30,6 +30,16 @@
   will-change: filter, opacity;
 }
 
+.static .blob {
+  animation: none;
+  will-change: auto;
+}
+
+.paused .blob {
+  animation-play-state: paused;
+  will-change: auto;
+}
+
 .blobOne {
   --blob-width: 68vw;
   --blob-height: 66vh;

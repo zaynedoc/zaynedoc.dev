@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import type { ProjectItem } from "@/data/projects";
 
@@ -17,9 +17,28 @@ type ProjectVisualizerProps = {
 export function ProjectVisualizer({ projects, selectedProject }: ProjectVisualizerProps) {
   const projectsWithMedia = useMemo(() => projects.filter((project) => project.media), [projects]);
   const [idleIndex, setIdleIndex] = useState(0);
+  const visualizerRef = useRef<HTMLElement>(null);
+  const [isNearViewport, setIsNearViewport] = useState(false);
 
   useEffect(() => {
-    if (selectedProject || projectsWithMedia.length < 2) {
+    const visualizer = visualizerRef.current;
+
+    if (!visualizer || !("IntersectionObserver" in window)) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsNearViewport(entry.isIntersecting),
+      { rootMargin: "500px 0px" },
+    );
+
+    observer.observe(visualizer);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isNearViewport || selectedProject || projectsWithMedia.length < 2) {
       return;
     }
 
@@ -34,7 +53,7 @@ export function ProjectVisualizer({ projects, selectedProject }: ProjectVisualiz
       window.clearTimeout(initialShuffle);
       window.clearInterval(interval);
     };
-  }, [projectsWithMedia, selectedProject]);
+  }, [isNearViewport, projectsWithMedia, selectedProject]);
 
   const activeProject = selectedProject ?? projectsWithMedia[idleIndex] ?? projects[0];
   const media = activeProject?.media;
@@ -44,13 +63,18 @@ export function ProjectVisualizer({ projects, selectedProject }: ProjectVisualiz
   }
 
   return (
-    <aside className={styles.visualizer} aria-label="Project visualizer">
+    <aside className={styles.visualizer} aria-label="Project visualizer" ref={visualizerRef}>
       <div className={styles.float}>
         <div className={styles.card}>
-          {media?.type === "video" ? (
-            <video autoPlay className={styles.media} key={media.src} loop muted playsInline src={media.src} />
-          ) : media?.type === "image" ? (
+          {isNearViewport && media?.type === "video" ? (
+            <video autoPlay className={styles.media} key={media.src} loop muted playsInline preload="metadata" src={media.src} />
+          ) : isNearViewport && media?.type === "image" ? (
             <Image alt={media.alt ?? `${activeProject.title} project preview`} className={styles.media} fill sizes="(min-width: 64.0625rem) 30vw, 0px" src={media.src} />
+          ) : media ? (
+            <div aria-hidden="true" className={styles.mediaPlaceholder}>
+              <span>Project visualizer</span>
+              <strong>{activeProject.title}</strong>
+            </div>
           ) : (
             <div className={styles.emptyState}>
               <span>Project visualizer</span>

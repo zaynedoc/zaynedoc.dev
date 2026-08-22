@@ -57,6 +57,15 @@
   object-fit: cover;
 }
 
+.player {
+  border: 0;
+  display: block;
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
 .songCopy {
   color: #fff;
   filter: drop-shadow(0 3px 5px rgb(53 22 74 / 28%));
@@ -128,6 +137,7 @@
   .byline {
     margin-top: 0.65rem !important;
   }
+
 }
 
 @media (prefers-reduced-motion: reduce) {

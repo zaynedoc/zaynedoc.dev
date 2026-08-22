@@ -8,7 +8,7 @@ export function WhoAmISection() {
     <section className={styles.section} aria-labelledby="who-am-i-heading" data-theme-color="#fcf9ff">
       <SectionBackground variant="experience" />
       <div aria-hidden="true" className={styles.stars}>
-        <ResponsivePublicImage alt="" webpSrc="/stars1.png" />
+        <ResponsivePublicImage alt="" decoding="async" loading="lazy" webpSrc="/stars1.png" />
       </div>
 
       <div className={styles.content}>
@@ -25,7 +25,7 @@ export function WhoAmISection() {
         </div>
 
         <div className={styles.portrait}>
-          <ResponsivePublicImage alt="Zayne standing in St. Augustine" webpSrc="/staugustine.jpg" />
+          <ResponsivePublicImage alt="Zayne standing in St. Augustine" decoding="async" loading="lazy" webpSrc="/staugustine.jpg" />
         </div>
       </div>
     </section>

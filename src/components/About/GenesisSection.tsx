@@ -9,23 +9,23 @@ export function GenesisSection() {
     <section className={styles.section} aria-labelledby="genesis-heading" data-theme-color="#fcf9ff">
       <SectionBackground variant="projects" />
       <div aria-hidden="true" className={styles.squaresTop}>
-        <ResponsivePublicImage alt="" webpSrc="/about-squares-1.png" />
+        <ResponsivePublicImage alt="" decoding="async" loading="lazy" webpSrc="/about-squares-1.png" />
       </div>
       <div aria-hidden="true" className={styles.squaresBottom}>
-        <ResponsivePublicImage alt="" webpSrc="/about-squares-2.png" />
+        <ResponsivePublicImage alt="" decoding="async" loading="lazy" webpSrc="/about-squares-2.png" />
       </div>
 
       <div className={styles.content}>
         <div className={styles.gallery}>
           <div className={styles.mainCar}>
-            <ResponsivePublicImage alt="Zayne's Hyundai Genesis at night" webpSrc="/car1.jpg" />
+            <ResponsivePublicImage alt="Zayne's Hyundai Genesis at night" decoding="async" loading="lazy" webpSrc="/car1.jpg" />
           </div>
           <div className={styles.secondaryCars}>
             <div>
-              <ResponsivePublicImage alt="Zayne's Hyundai Genesis near UCF" webpSrc="/car2.jpg" />
+              <ResponsivePublicImage alt="Zayne's Hyundai Genesis near UCF" decoding="async" loading="lazy" webpSrc="/car2.jpg" />
             </div>
             <div>
-              <ResponsivePublicImage alt="Zayne's Hyundai Genesis during the day" webpSrc="/car3.jpg" />
+              <ResponsivePublicImage alt="Zayne's Hyundai Genesis during the day" decoding="async" loading="lazy" webpSrc="/car3.jpg" />
             </div>
           </div>
         </div>

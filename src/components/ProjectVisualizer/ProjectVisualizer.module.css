@@ -34,7 +34,8 @@
   width: 100%;
 }
 
-.emptyState {
+.emptyState,
+.mediaPlaceholder {
   align-items: flex-start;
   background:
     radial-gradient(circle at 20% 15%, rgb(232 204 255 / 76%), transparent 38%),
@@ -49,6 +50,7 @@
 }
 
 .emptyState span,
+.mediaPlaceholder span,
 .label span {
   font-family: var(--font-display);
   font-size: 0.68rem;
@@ -56,7 +58,8 @@
   text-transform: uppercase;
 }
 
-.emptyState strong {
+.emptyState strong,
+.mediaPlaceholder strong {
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 2vw, 2rem);
   font-weight: 400;

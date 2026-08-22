@@ -7,13 +7,13 @@ export function Nintendo3DS() {
   return (
     <PageTransitionLink aria-label="Open Zayne's 3DS dashboard" className={styles.trigger} href="/dashboard">
       <span aria-hidden="true" className={styles.star}>
-        <ResponsivePublicImage alt="" webpSrc="/star-ds.png" />
+        <ResponsivePublicImage alt="" decoding="async" loading="lazy" webpSrc="/star-ds.png" />
       </span>
       <span aria-hidden="true" className={`${styles.console} ${styles.closed}`}>
-        <ResponsivePublicImage alt="" webpSrc="/ds-closed.png" />
+        <ResponsivePublicImage alt="" decoding="async" loading="lazy" webpSrc="/ds-closed.png" />
       </span>
       <span aria-hidden="true" className={`${styles.console} ${styles.open}`}>
-        <ResponsivePublicImage alt="" webpSrc="/ds-open.png" />
+        <ResponsivePublicImage alt="" decoding="async" loading="lazy" webpSrc="/ds-open.png" />
       </span>
     </PageTransitionLink>
   );
