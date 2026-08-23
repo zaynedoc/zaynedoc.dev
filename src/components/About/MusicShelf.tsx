@@ -10,7 +10,7 @@ import styles from "./MusicShelf.module.css";
 export function MusicShelf() {
   const [activeIndex, setActiveIndex] = useState(0);
   const song = favoriteSongs[activeIndex];
-  const playerSource = `https://www.youtube-nocookie.com/embed/${song.youtubeId}?controls=1&end=${song.highlightEnd}&playsinline=1&rel=0&start=${song.highlightStart}`;
+  const playerSource = `https://www.youtube-nocookie.com/embed/${song.youtubeId}?controls=1&playsinline=1&rel=0&start=${song.highlightStart}`;
 
   function moveSelection(direction: 1 | -1) {
     setActiveIndex((currentIndex) => (currentIndex + direction + favoriteSongs.length) % favoriteSongs.length);

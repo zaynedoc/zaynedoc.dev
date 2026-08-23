@@ -4,10 +4,30 @@ import { ExproMasthead } from "@/components/Expro/ExproMasthead";
 import { ExperienceSection } from "@/components/Expro/ExperienceSection";
 import { ProjectsSection } from "@/components/Expro/ProjectsSection";
 import { SiteFooter } from "@/components/SiteFooter/SiteFooter";
+import { indexableRobots, siteName } from "@/data/site";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Expro",
+  alternates: { canonical: "/expro" },
+  description: "Experience and selected projects by Zayne Doc, spanning UX/UI, software development, DevOps, and application security.",
+  openGraph: {
+    description: "Experience and selected projects by Zayne Doc, spanning UX/UI, software development, DevOps, and application security.",
+    images: [{ alt: "Zayne Doc portfolio", height: 1080, url: "/og-image.jpg", width: 1920 }],
+    locale: "en_US",
+    siteName,
+    title: "Expro — Experience & Projects",
+    type: "website",
+    url: "/expro",
+  },
+  robots: indexableRobots,
+  title: "Expro — Experience & Projects",
+  twitter: {
+    card: "summary_large_image",
+    creator: "@zaynedoc",
+    description: "Experience and selected projects by Zayne Doc, spanning UX/UI, software development, DevOps, and application security.",
+    images: ["/og-image.jpg"],
+    title: "Expro — Experience & Projects",
+  },
 };
 
 export default function ExproPage() {
