@@ -12,18 +12,18 @@ export const metadata: Metadata = {
     images: [{ alt: "Zayne Doc portfolio", height: 1080, url: "/og-image.jpg", width: 1920 }],
     locale: "en_US",
     siteName,
-    title: "Zayne Doc — Portfolio",
+    title: "zaynedoc.dev",
     type: "website",
     url: "/",
   },
   robots: indexableRobots,
-  title: "Zayne Doc — Portfolio",
+  title: "zaynedoc.dev",
   twitter: {
     card: "summary_large_image",
     creator: "@zaynedoc",
     description: "Zayne Doc's portfolio for UX/UI, DevOps, application security, and software projects.",
     images: ["/og-image.jpg"],
-    title: "Zayne Doc — Portfolio",
+    title: "zaynedoc.dev",
   },
 };
 

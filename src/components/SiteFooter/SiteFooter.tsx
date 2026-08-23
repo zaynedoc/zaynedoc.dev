@@ -39,7 +39,12 @@ export function SiteFooter() {
           </li>
         ))}
       </ul>
-      <p className={styles.credit}>made with Figma</p>
+      <p className={styles.credit}>
+        made with{" "}
+        <a href="https://www.figma.com/community/file/1672098809246908592/zaynedoc-dev" rel="noreferrer" target="_blank">
+          Figma ↗
+        </a>
+      </p>
     </footer>
   );
 }

@@ -68,6 +68,20 @@
   margin: 0;
 }
 
+.credit a {
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 180ms ease, filter 180ms ease, transform 180ms ease;
+}
+
+.credit a:is(:hover, :focus-visible) {
+  color: var(--color-lavender-deep);
+  filter: drop-shadow(0 0 0.34rem rgb(148 112 217 / 65%));
+  outline: none;
+  transform: translateY(-0.1rem);
+}
+
 @media (max-width: 64rem) {
   .footer {
     flex-wrap: wrap;
