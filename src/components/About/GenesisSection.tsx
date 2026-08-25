@@ -36,7 +36,7 @@ export function GenesisSection() {
             <div aria-hidden="true" />
           </div>
           <div className={styles.description}>
-            <p>Here’s some cool photos of my cars.</p>
+            <p>Here’s some cool photos of my car.</p>
             <p>I love going for small drives around the Orlando/Melbourne area of Florida whenever I have the time.</p>
             <p>My car is a 2014 Hyundai Genesis Coupe 2.0T Premium, I’ve owned it since mid-2024.</p>
             <p>Auto transmission by the way, I’ve yet to learn how to drive stick 😭</p>
