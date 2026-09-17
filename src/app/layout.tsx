@@ -6,7 +6,7 @@ import { InvertedCursor } from "@/components/InvertedCursor/InvertedCursor";
 import { LenisScroll } from "@/components/LenisScroll/LenisScroll";
 import { PageReveal } from "@/components/PageReveal/PageReveal";
 import { SiteHeader } from "@/components/SiteHeader/SiteHeader";
-import { noIndexRobots, siteName, siteUrl } from "@/data/site";
+import { noIndexRobots, siteDescription, siteName, sitePreviewImage, siteTitle, siteUrl } from "@/data/site";
 import "./globals.css";
 
 const zalandoSemiExpanded = localFont({
@@ -38,26 +38,26 @@ const zalandoExpandedExtraBold = localFont({
 
 export const metadata: Metadata = {
   applicationName: siteName,
-  authors: [{ name: "Zayne Doc", url: siteUrl }],
-  creator: "Zayne Doc",
+  authors: [{ name: "Zayne Dockery", url: siteUrl }],
+  creator: "Zayne Dockery",
   title: {
-    default: "zaynedoc.dev",
-    template: "%s | zaynedoc.dev",
+    default: siteTitle,
+    template: `%s | ${siteTitle}`,
   },
-  description: "Portfolio of Zayne Doc — UX/UI, DevOps, application security, and software projects.",
+  description: siteDescription,
   metadataBase: new URL(siteUrl),
   openGraph: {
-    images: [{ alt: "Zayne Doc portfolio", height: 1080, url: "/og-image.jpg", width: 1920 }],
+    images: [{ alt: "Portrait of Zayne Dockery", height: 630, url: sitePreviewImage, width: 1200 }],
     locale: "en_US",
     siteName,
     type: "website",
   },
-  publisher: "Zayne Doc",
+  publisher: "Zayne Dockery",
   robots: noIndexRobots,
   twitter: {
     card: "summary_large_image",
     creator: "@zaynedoc",
-    images: ["/og-image.jpg"],
+    images: [sitePreviewImage],
   },
 };
 
@@ -73,15 +73,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 {
                   "@id": `${siteUrl}/#website`,
                   "@type": "WebSite",
-                  name: siteName,
+                  name: siteTitle,
                   url: siteUrl,
                 },
                 {
-                  "@id": `${siteUrl}/#zayne-doc`,
+                  "@id": `${siteUrl}/#zayne-dockery`,
                   "@type": "Person",
                   email: "mailto:zayne@zaynedoc.dev",
+                  image: `${siteUrl}${sitePreviewImage}`,
                   jobTitle: "Software Developer and UX/UI Designer",
-                  name: "Zayne Doc",
+                  name: "Zayne Dockery",
                   sameAs: [
                     "https://github.com/zaynedoc",
                     "https://www.linkedin.com/in/zaynedoc/",

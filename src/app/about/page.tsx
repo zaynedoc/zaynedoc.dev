@@ -6,14 +6,14 @@ import { GenesisSection } from "@/components/About/GenesisSection";
 import { MusicShelf } from "@/components/About/MusicShelf";
 import { WhoAmISection } from "@/components/About/WhoAmISection";
 import { SiteFooter } from "@/components/SiteFooter/SiteFooter";
-import { indexableRobots, siteName } from "@/data/site";
+import { indexableRobots, siteName, sitePreviewImage } from "@/data/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/about" },
-  description: "Learn more about Zayne Doc: a UX/UI-focused developer interested in DevOps, application security, cars, design, and music.",
+  description: "Learn more about Zayne Dockery: a UX/UI-focused developer interested in DevOps, application security, cars, design, and music.",
   openGraph: {
-    description: "Learn more about Zayne Doc: a UX/UI-focused developer interested in DevOps, application security, cars, design, and music.",
-    images: [{ alt: "Zayne Doc portfolio", height: 1080, url: "/og-image.jpg", width: 1920 }],
+    description: "Learn more about Zayne Dockery: a UX/UI-focused developer interested in DevOps, application security, cars, design, and music.",
+    images: [{ alt: "Portrait of Zayne Dockery", height: 630, url: sitePreviewImage, width: 1200 }],
     locale: "en_US",
     siteName,
     title: "About",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     creator: "@zaynedoc",
-    description: "Learn more about Zayne Doc: a UX/UI-focused developer interested in DevOps, application security, cars, design, and music.",
-    images: ["/og-image.jpg"],
+    description: "Learn more about Zayne Dockery: a UX/UI-focused developer interested in DevOps, application security, cars, design, and music.",
+    images: [sitePreviewImage],
     title: "About",
   },
 };
