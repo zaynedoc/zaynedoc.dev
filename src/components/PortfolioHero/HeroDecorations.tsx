@@ -3,12 +3,12 @@ import { ResponsivePublicImage } from "@/components/ResponsivePublicImage/Respon
 import styles from "./HeroDecorations.module.css";
 
 type HeroDecorationsProps = {
-  isExpro: boolean;
+  isWork: boolean;
 };
 
-export function HeroDecorations({ isExpro }: HeroDecorationsProps) {
+export function HeroDecorations({ isWork }: HeroDecorationsProps) {
   return (
-    <div className={`${styles.decorations} ${isExpro ? styles.exproDecorations : ""}`} aria-hidden="true">
+    <div className={`${styles.decorations} ${isWork ? styles.workDecorations : ""}`} aria-hidden="true">
       <div className={styles.squares}>
         <ResponsivePublicImage alt="" webpSrc="/main-squares.webp" />
       </div>

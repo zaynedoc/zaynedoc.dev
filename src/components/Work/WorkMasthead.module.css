@@ -23,7 +23,7 @@
   position: absolute;
   top: 50%;
   /* A filter shadow stays outside the transparent gradient fill. Text-shadow
-     bled through that fill and created the dark halo visible inside EXPRO. */
+     bled through that fill and created the dark halo visible inside WORK. */
   filter: drop-shadow(0 4px 10px rgb(0 0 0 / 25%));
   transform: translateY(-50%);
   z-index: var(--layer-content);
@@ -46,7 +46,7 @@
   bottom: 0;
   height: auto;
   right: 0;
-  width: var(--expro-hero-curve-width, clamp(10.5rem, 15vw, 18rem));
+  width: var(--work-hero-curve-width, clamp(10.5rem, 15vw, 18rem));
 }
 
 .curves img,
@@ -70,7 +70,7 @@
   bottom: 0;
   left: auto;
   right: 0;
-  width: var(--expro-divider-square-width, clamp(21rem, 30vw, 36rem));
+  width: var(--work-divider-square-width, clamp(21rem, 30vw, 36rem));
   transform: rotate(180deg);
 }
 
@@ -87,7 +87,7 @@
 @media (max-width: 37.5rem) {
   .masthead {
     /* Hug the title on phones; the artwork intentionally stays smaller than
-       EXPRO and is no longer used to determine the header's height. */
+       WORK and is no longer used to determine the header's height. */
     height: 5.5rem;
   }
 

@@ -14,17 +14,17 @@
   z-index: var(--layer-content);
 }
 
-.exproContent {
-  --expro-content-offset-y: -8svh;
+.workContent {
+  --work-content-offset-y: -8svh;
 
   flex-direction: column;
   gap: 50px;
   justify-content: center;
   padding-inline: 100px;
-  transform: translateY(var(--expro-content-offset-y));
+  transform: translateY(var(--work-content-offset-y));
 }
 
-.exproDetails {
+.workDetails {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@
   width: max-content;
 }
 
-.exproSocialSpacer {
+.workSocialSpacer {
   flex: none;
   height: 48px;
   width: 100%;
@@ -63,17 +63,17 @@
     padding-inline: 24px;
   }
 
-  .exproContent {
-    --expro-content-offset-y: 0px;
+  .workContent {
+    --work-content-offset-y: 0px;
 
     padding-inline: 24px;
   }
 
-  .exproDetails {
+  .workDetails {
     gap: 0;
   }
 
-  .exproRoles {
+  .workRoles {
     display: none;
   }
 }

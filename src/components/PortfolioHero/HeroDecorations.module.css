@@ -6,7 +6,7 @@
   z-index: var(--layer-decoration);
 }
 
-.exproDecorations {
+.workDecorations {
   --edge-decoration-pixel: clamp(0.75px, 0.0390625vw, 1px);
 
   font-size: var(--edge-decoration-pixel);
@@ -17,11 +17,11 @@
   position: absolute;
 }
 
-.exproDecorations .squares {
+.workDecorations .squares {
   width: 575em;
 }
 
-.exproDecorations .curves {
+.workDecorations .curves {
   width: 288em;
 }
 
@@ -39,14 +39,14 @@
   width: min(288px, 15vw);
 }
 
-/* Root gets the opposite corner composition from Expro for visual variety.
+/* Root gets the opposite corner composition from Work for visual variety.
    The artwork itself is unchanged; only its anchored corner is swapped. */
-.decorations:not(.exproDecorations) .squares {
+.decorations:not(.workDecorations) .squares {
   left: auto;
   right: 0;
 }
 
-.decorations:not(.exproDecorations) .curves {
+.decorations:not(.workDecorations) .curves {
   left: 0;
   right: auto;
   transform: scaleX(-1);
@@ -60,11 +60,11 @@
 }
 
 @media (max-width: 64rem) {
-  .exproDecorations .squares {
+  .workDecorations .squares {
     width: min(575px, 29.9479vw);
   }
 
-  .exproDecorations .curves {
+  .workDecorations .curves {
     width: min(288px, 15vw);
   }
 }

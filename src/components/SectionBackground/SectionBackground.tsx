@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import experienceBackground from "@/assets/bg/expro-experience-background.webp";
-import projectBackground from "@/assets/bg/expro-project-background.webp";
+import experienceBackground from "@/assets/bg/work-experience-background.webp";
+import projectBackground from "@/assets/bg/work-project-background.webp";
 
 import styles from "./SectionBackground.module.css";
 

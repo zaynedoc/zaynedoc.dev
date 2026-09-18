@@ -9,7 +9,7 @@ import styles from "./SiteFooter.module.css";
 
 const navigationLinks = [
   { href: "/", label: "/root" },
-  { href: "/expro", label: "/expro" },
+  { href: "/work", label: "/work" },
   { href: "/about", label: "/about" },
 ] as const;
 

@@ -84,7 +84,7 @@
   display: none;
 }
 
-.exproTitle .foreground {
+.workTitle .foreground {
   left: 270px;
   top: 91px;
 }
@@ -101,7 +101,7 @@
     top: 95px;
   }
 
-  .exproTitle .foreground {
+  .workTitle .foreground {
     left: 294px;
     top: 95px;
   }
@@ -162,7 +162,7 @@
     top: 12.5px;
   }
 
-  .exproTitle .foreground {
+  .workTitle .foreground {
     left: 50%;
     top: 37px;
     transform: translateX(-50%);

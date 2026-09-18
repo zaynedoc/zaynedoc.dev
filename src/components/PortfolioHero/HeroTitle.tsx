@@ -8,13 +8,13 @@ import heroNameShadowPhone from "@/assets/hero/hero-name-shadow-phone.svg";
 import styles from "./HeroTitle.module.css";
 
 type HeroTitleProps = {
-  contentLayout: "home" | "expro";
+  contentLayout: "home" | "work";
   name: string;
 };
 
 export function HeroTitle({ contentLayout, name }: HeroTitleProps) {
   return (
-    <h1 className={`${styles.title} ${contentLayout === "expro" ? styles.exproTitle : styles.homeTitle}`} aria-label={name}>
+    <h1 className={`${styles.title} ${contentLayout === "work" ? styles.workTitle : styles.homeTitle}`} aria-label={name}>
       <span className={styles.shadowText} aria-hidden="true">
         zaynedoc
       </span>

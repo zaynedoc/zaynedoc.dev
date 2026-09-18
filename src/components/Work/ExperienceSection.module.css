@@ -85,7 +85,7 @@
   /* This export spans four grid cells; the masthead curve spans three.
      Use the shared four-cell value so both decorations stay registered at
      every desktop width (especially the 1080px minimum clamp). */
-  width: var(--expro-project-square-width, clamp(14rem, 20vw, 24rem));
+  width: var(--work-project-square-width, clamp(14rem, 20vw, 24rem));
 }
 
 .curves img {
@@ -231,7 +231,7 @@
 
   /* Four grid units wide, matching the Project square export at this size. */
   .curves {
-    width: var(--expro-project-square-width, 14rem);
+    width: var(--work-project-square-width, 14rem);
   }
 
   /* On phones, the stickers become a normal-flow cluster below the list.

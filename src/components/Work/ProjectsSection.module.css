@@ -84,14 +84,14 @@
   aspect-ratio: 1152 / 1536;
   left: 0;
   top: 0;
-  width: var(--expro-hero-curve-width, clamp(10.5rem, 15vw, 18rem));
+  width: var(--work-hero-curve-width, clamp(10.5rem, 15vw, 18rem));
 }
 
 .squares {
   aspect-ratio: 1536 / 2304;
   bottom: 0;
   left: 0;
-  width: var(--expro-project-square-width, clamp(14rem, 20vw, 24rem));
+  width: var(--work-project-square-width, clamp(14rem, 20vw, 24rem));
 }
 
 .curves img,

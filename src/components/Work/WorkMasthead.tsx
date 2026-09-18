@@ -1,17 +1,17 @@
 import { ResponsivePublicImage } from "@/components/ResponsivePublicImage/ResponsivePublicImage";
 import { HeroBackground } from "@/components/PortfolioHero/HeroBackground";
 
-import styles from "./ExproMasthead.module.css";
+import styles from "./WorkMasthead.module.css";
 
-type ExproMastheadProps = {
+type WorkMastheadProps = {
   decorative?: boolean;
 };
 
-export function ExproMasthead({ decorative = false }: ExproMastheadProps) {
+export function WorkMasthead({ decorative = false }: WorkMastheadProps) {
   return (
     <section
       aria-hidden={decorative || undefined}
-      aria-label={decorative ? undefined : "Expro"}
+      aria-label={decorative ? undefined : "Work"}
       className={`${styles.masthead} ${decorative ? styles.decorative : ""}`}
       data-cursor-tone="dark"
       data-theme-color="#cba5e5"
@@ -31,7 +31,7 @@ export function ExproMasthead({ decorative = false }: ExproMastheadProps) {
           </div>
         ) : null}
       </div>
-      {!decorative ? <h1 className={styles.title}>EXPRO</h1> : null}
+      {!decorative ? <h1 className={styles.title}>WORK</h1> : null}
     </section>
   );
 }

@@ -12,7 +12,7 @@ import styles from "./SiteHeader.module.css";
 
 const navigationLinks = [
   { href: "/", label: "/root", disabled: false },
-  { href: "/expro", label: "/expro", disabled: false },
+  { href: "/work", label: "/work", disabled: false },
   { href: "/about", label: "/about", disabled: false },
 ] as const;
 

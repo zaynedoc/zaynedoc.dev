@@ -18,11 +18,11 @@ export function ExperienceSection() {
       <SectionBackground variant="experience" />
 
       <DecorativeLayer className={styles.stripes}>
-        <ResponsivePublicImage alt="" webpSrc="/expro-experience-stripes.webp" />
+        <ResponsivePublicImage alt="" webpSrc="/work-experience-stripes.webp" />
       </DecorativeLayer>
 
       <DecorativeLayer className={styles.curves}>
-        <ResponsivePublicImage alt="" webpSrc="/expro-experience-curves.webp" />
+        <ResponsivePublicImage alt="" webpSrc="/work-experience-curves.webp" />
       </DecorativeLayer>
 
       <div className={styles.content}>

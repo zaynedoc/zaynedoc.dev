@@ -1,6 +1,6 @@
 import type { StaticImageData } from "next/image";
 
-import exproRolesTexture from "@/assets/hero/expro-roles-texture.png";
+import workRolesTexture from "@/assets/hero/work-roles-texture.png";
 
 export type SocialLink = {
   href: string;
@@ -9,7 +9,7 @@ export type SocialLink = {
 };
 
 export type HeroConfig = {
-  contentLayout: "home" | "expro";
+  contentLayout: "home" | "work";
   name: string;
   roles?: {
     text: string;
@@ -40,12 +40,12 @@ export const homeHeroConfig: HeroConfig = {
   ],
 };
 
-export const exproHeroConfig: HeroConfig = {
-  contentLayout: "expro",
+export const workHeroConfig: HeroConfig = {
+  contentLayout: "work",
   name: "Zayne Dockery",
   roles: {
     text: "Figma Campus Leader • Web Dev @ KDI • SWE Intern @ BNY • Outreach @ KH",
-    texture: exproRolesTexture,
+    texture: workRolesTexture,
   },
   socialLinks: homeHeroConfig.socialLinks,
 };
